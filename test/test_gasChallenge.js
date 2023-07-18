@@ -9,18 +9,23 @@ describe("Deploy Gas Challenge Contract", () => {
       "gasChallenge"
     );
     gas_contract = await gas_challenge_contract.deploy();
+    await gas_contract.deployed();
   });
 
   describe("Compute Gas", () => {
     it("Should return lower gas", async () => {
+      const gasUsageBefore = await gas_contract.estimateGas.notOptimizedFunction();
       await gas_contract.notOptimizedFunction();
-      await gas_contract.optimizedFunction();
+      const gasUsageAfter = await gas_contract.estimateGas.optimizedFunction();
+      expect(gasUsageAfter).to.be.lessThan(gasUsageBefore);
     });
   });
 
   describe("Check Sum Of Array", () => {
     it("Should return 0", async () => {
-      // Write test block here to check sum of array equals 0
+      await gas_contract.optimizedFunction();
+      const sum = await gas_contract.getSumOfArray();
+      expect(sum.toNumber()).to.equal(0);
     });
   });
 });
