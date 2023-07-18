@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gas Optimization Bounty by StackUp
 
 ![12 July - Gas Optimisation Challenge](https://github.com/clement-stackup/gas_challenge/assets/120361535/21c826fb-8776-4837-a8fe-b7040426eafa)
@@ -53,3 +54,6 @@ This command will also check if the sum of the array returns 0. You can refer be
 
 Upload all your working files to your GitHub Repository and submit your GitHub Repository URL to the StackUp Gas Optimization Challenge Bounty Page to successfully complete this challenge!
 
+=======
+# gas_challenge
+>>>>>>> a8833fee8a87d4490d178b79c51f5f34cf1e7fec
